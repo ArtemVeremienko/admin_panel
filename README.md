@@ -1,4 +1,4 @@
-# Admin panel w/ Material Design for Bootstrap :computer:
+# :computer: Admin panel w/ Material Design for Bootstrap 
 
 *version: MDB Free 4.5.10*
 
