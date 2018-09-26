@@ -250,6 +250,28 @@
 						</div>
 					</div>
 				</div>
+
+				<div class="col-lg-4 col md-6 mb-4">
+					<div class="card">
+						<div class="card-header">
+							Radar-chart
+						</div>
+						<div class="card-body">
+							<canvas id="radarChart"></canvas>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col md-6 mb-4">
+					<div class="card">
+						<div class="card-header">
+							Doughnut-chart
+						</div>
+						<div class="card-body">
+							<canvas id="doughnutChart"></canvas>
+						</div>
+					</div>
+				</div>
 			</div>	
 
 		</div>
@@ -361,10 +383,57 @@
     				pointHighlightFill: '#fff',
     				pointHighlightStroke: 'yellow',
     				data: [13, 34, 2, 45, 28, 66]
-    			},
-    			],
+    			}
+    			]
     		}
-    	})
+    	});
+
+    	var ctxR = document.getElementById('radarChart').getContext('2d');
+    	var myRadarChart = new Chart(ctxR, {
+    		type: 'radar',
+    		data: {
+    			labels: ['first', 'second', 'third', 'fourth', 'fifth', 'sixth'],
+    			datasets: [
+    				{
+    				label: 'dataset',
+    				fillColor: 'black',
+    				strokeColor: 'red',
+    				pointColor: 'green',
+    				pointStrokeColor: '#fff',
+    				pointHighlightFill: '#fff',
+    				pointHighlightStroke: 'yellow',
+    				data: [43, 54, 62, 45, 48, 66]
+	    			},
+	    			{
+    				label: 'dataset2',
+    				fillColor: 'black',
+    				strokeColor: 'red',
+    				pointColor: 'green',
+    				pointStrokeColor: '#fff',
+    				pointHighlightFill: '#fff',
+    				pointHighlightStroke: 'yellow',
+    				data: [33, 24, 32, 45, 28, 36]
+    				}
+    			]
+    		}
+    	});
+
+    	var ctxD = document.getElementById('doughnutChart').getContext('2d');
+    	var myDoughnutChart = new Chart(ctxD, {
+    		type: 'doughnut',
+    		data: {
+    			labels: ['first', 'second', 'third', 'fourth', 'fifth'],
+    			datasets: [{
+    				data: [230, 120, 90, 301, 50],
+    				backgroundColor: ['blue', 'yellow', 'black', 'red', 'green'],
+    				hoverBackgroundColor: ['green', 'grey', 'pink', 'blue', 'red'],
+    			}]   			
+    		},
+    		options: {
+    			responsive: true
+    		}
+    	});
+
     </script>
 </body>
 
